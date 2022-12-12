@@ -39,7 +39,7 @@
 - belongs_to :category
 - belongs_to :condition
 - belongs_to :delivery_charge
-- belongs_to :prefecture
+- belongs_to :prefecture_id
 - belongs_to :duration
 - has_one :purchase_record
 
@@ -71,4 +71,4 @@
 ### Association
 
 - belongs_to :purchase_record
-- belongs_to :prefecture
+- belongs_to :prefecture_id
