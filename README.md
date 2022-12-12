@@ -40,7 +40,7 @@
 - belongs_to :condition
 - belongs_to :delivery_charge
 - belongs_to :prefecture_id
-- belongs_to :duration_id
+- belongs_to :duration
 - has_one :purchase_record
 
 ## purchase_records テーブル
