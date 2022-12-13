@@ -5,13 +5,18 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+    VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
     validates :nick_name
-    validates :password, format: {with: VALID_PASSWORD_REGEX, allow_blank: true, message: "is invalid. Input alphanumeric characters."}
-    validates :last_name, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, allow_blank: true, message: "is invalid. Input full-width characters."}
-    validates :first_name, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, allow_blank: true, message: "is invalid. Input full-width characters."}
-    validates :last_name_katakana, format: {with: /\A[ァ-ヶー]+\z/, allow_blank: true, message: "is invalid. Input full-width katakana characters."}
-    validates :first_name_katakana, format: {with: /\A[ァ-ヶー]+\z/, allow_blank: true, message: "is invalid. Input full-width katakana characters."}
+    validates :password,
+              format: { with: VALID_PASSWORD_REGEX, allow_blank: true, message: 'is invalid. Input alphanumeric characters.' }
+    validates :last_name,
+              format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, allow_blank: true, message: 'is invalid. Input full-width characters.' }
+    validates :first_name,
+              format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, allow_blank: true, message: 'is invalid. Input full-width characters.' }
+    validates :last_name_katakana,
+              format: { with: /\A[ァ-ヶー]+\z/, allow_blank: true, message: 'is invalid. Input full-width katakana characters.' }
+    validates :first_name_katakana,
+              format: { with: /\A[ァ-ヶー]+\z/, allow_blank: true, message: 'is invalid. Input full-width katakana characters.' }
     validates :birth_day
   end
 end
