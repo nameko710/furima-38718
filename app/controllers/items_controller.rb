@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_signed_in, only: :new
+  before_action :move_to_index, only: :new
 
   def index
   end
@@ -19,8 +19,8 @@ class ItemsController < ApplicationController
 
   private
 
-  def move_to_signed_in
-    redirect_to '/users/sign_up' unless user_signed_in?
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 
   def items_params
