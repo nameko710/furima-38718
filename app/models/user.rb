@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password,
-  format: { with: VALID_PASSWORD_REGEX, allow_blank: true, message: 'is invalid. Input alphanumeric characters.' }
+            format: { with: VALID_PASSWORD_REGEX, allow_blank: true, message: 'is invalid. Input alphanumeric characters.' }
 
   with_options presence: true do
     validates :nick_name
@@ -20,4 +20,6 @@ class User < ApplicationRecord
               format: { with: /\A[ァ-ヶー]+\z/, allow_blank: true, message: 'is invalid. Input full-width katakana characters.' }
     validates :birth_day
   end
+
+  has_many :items
 end
