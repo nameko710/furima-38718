@@ -45,9 +45,6 @@ class ItemsController < ApplicationController
 
   def move_to_index
     prototype = Item.find(params[:id])
-    unless current_user.id == prototype.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.id == prototype.user_id
   end
-
 end
