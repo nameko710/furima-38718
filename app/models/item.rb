@@ -14,4 +14,5 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :duration
   has_one_attached :image
+  has_one :purchase_record
 end
