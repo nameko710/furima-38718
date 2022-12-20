@@ -9,66 +9,66 @@ RSpec.describe PurchaseAddress, type: :model do
   end
 
   context '内容に問題ない場合' do
-    it "tokenとpost_code,prefecture_id,municipality,address,phone_numberがあれば保存ができること" do
+    it 'tokenとpost_code,prefecture_id,municipality,address,phone_numberがあれば保存ができること' do
       expect(@purchase_address).to be_valid
     end
 
-    it "building_nameが無くても保存ができること" do
+    it 'building_nameが無くても保存ができること' do
       @purchase_address.building_name = ''
       expect(@purchase_address).to be_valid
     end
   end
 
   context '内容に問題がある場合' do
-    it "post_codeが空では保存ができないこと" do
+    it 'post_codeが空では保存ができないこと' do
       @purchase_address.post_code = ''
       @purchase_address.valid?
       expect(@purchase_address.errors.full_messages).to include("Post code can't be blank")
     end
 
-    it "post_codeが半角ハイフンを含んだ正しい形式でないと保存ができないこと" do
+    it 'post_codeが半角ハイフンを含んだ正しい形式でないと保存ができないこと' do
       @purchase_address.post_code = '1234567'
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include("Post code is invalid")
+      expect(@purchase_address.errors.full_messages).to include('Post code is invalid')
     end
 
-    it "prefecture_idが1では保存ができないこと" do
+    it 'prefecture_idが1では保存ができないこと' do
       @purchase_address.prefecture_id = '1'
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include("Prefecture must be other than 1")
+      expect(@purchase_address.errors.full_messages).to include('Prefecture must be other than 1')
     end
 
-    it "municipalityが空では保存ができないこと" do
+    it 'municipalityが空では保存ができないこと' do
       @purchase_address.municipality = ''
       @purchase_address.valid?
       expect(@purchase_address.errors.full_messages).to include("Municipality can't be blank")
     end
 
-    it "addressが空では保存ができないこと" do
+    it 'addressが空では保存ができないこと' do
       @purchase_address.address = ''
       @purchase_address.valid?
       expect(@purchase_address.errors.full_messages).to include("Address can't be blank")
     end
 
-    it "phone_numberが空では保存ができないこと" do
+    it 'phone_numberが空では保存ができないこと' do
       @purchase_address.phone_number = ''
       @purchase_address.valid?
       expect(@purchase_address.errors.full_messages).to include("Phone number can't be blank")
     end
 
-    it "phone_numberが10または11桁以外では保存ができないこと" do
+    it 'phone_numberが10または11桁以外では保存ができないこと' do
       @purchase_address.phone_number = '999999999'
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include("Phone number is invalid")
+      expect(@purchase_address.errors.full_messages).to include('Phone number is invalid')
     end
 
-    it "phone_numberが半角数値ではないと保存ができないこと" do
+    it 'phone_numberが半角数値ではないと保存ができないこと' do
       @purchase_address.phone_number = '９９９９９９９９９９９'
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include("Phone number is invalid")
+      expect(@purchase_address.errors.full_messages).to include('Phone number is invalid')
     end
 
-    it "tokenが空では登録できないこと" do
+    it 'tokenが空では登録できないこと' do
       @purchase_address.token = ''
       @purchase_address.valid?
       expect(@purchase_address.errors.full_messages).to include("Token can't be blank")
@@ -85,7 +85,5 @@ RSpec.describe PurchaseAddress, type: :model do
       @purchase_address.valid?
       expect(@purchase_address.errors.full_messages).to include("Item can't be blank")
     end
-
   end
-
 end
