@@ -6,10 +6,10 @@ class PurchaseAddress
     validates :token
     validates :user_id
     validates :item_id
-    validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
+    validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, allow_blank: true}
     validates :municipality
     validates :address
-    validates :phone_number, format: {with: /[0-9]{10,11}/}
+    validates :phone_number, format: {with: /[0-9]{10,11}/, allow_blank: true}
   end
   validates :prefecture_id, numericality: {other_than: 1}
 
