@@ -1,0 +1,50 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nick_name: ニックネーム
+        last_name: 苗字
+        first_name: 名前
+        last_name_katakana: 苗字のフリガナ
+        first_name_katakana: 名前のフリガナ
+        birth_day: 生年月日
+      item:
+        image: 画像
+        item_name: 商品名
+        description: 商品の説明
+        category_id: カテゴリー
+        condition_id: 商品の状態
+        delivery_charge_id: 配送料の負担
+        prefecture_id: 地域
+        duration_id: 発送までの日数
+        price: 販売価格
+
+    errors:
+      messages:
+          not_selected: を選択してください
+
+  activemodel:
+    attributes:
+      purchase_address:
+        token: クレジットカード情報
+        post_code: 郵便番号
+        municipality: 市区町村 
+        address: 番地
+        phone_number: 電話番号
+        prefecture_id: 都道府県
+    errors:
+      models:
+        purchase_address:
+          attributes:
+            prefecture_id: 
+              
+    errors:
+      messages:
+          not_selected: を選択してください
+          include_hyphens: はハイフンを含めて半角数字で入力してください
+          enter_in_single_byte_numbers_without_hyphens: はハイフンを含めずに半角数字で入力してください
+
+
+
+      
+        
