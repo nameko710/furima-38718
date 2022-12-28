@@ -141,3 +141,6 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+      is_invalid_Input_alphanumeric_characters: は英数字を混ぜた半角英数字を入力してください
+      is_invalid_Input_full_width_characters: は全角で入力してください
+      :is_invalid_Input_full_width_katakana_characters: は全角カタカナで入力してください

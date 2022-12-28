@@ -22,6 +22,7 @@ ja:
     errors:
       messages:
           not_selected: を選択してください
+          
 
   activemodel:
     attributes:
