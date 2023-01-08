@@ -61,6 +61,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
+  gem 'unicorn', '5.4.1'
 end
 
 gem 'devise'
@@ -75,3 +76,5 @@ gem 'image_processing', '~> 1.2'
 gem 'payjp'
 
 gem 'rails-i18n'
+
+gem "aws-sdk-s3", require: false
