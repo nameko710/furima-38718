@@ -1,6 +1,6 @@
 const pay = () => {
   //環境変数をもとに公開鍵を復号
-  const payjp = Payjp(process.env.PAYJP_PUBLIC_KEY)
+  const payjp = Payjp(process.env.PAYJP_PUBLIC_KEY);
   //elementsインスタンスを生成
   const elements = payjp.elements();
 
